@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "main.py", "main.py\main.py.pyproj", "{60CD6659-8B1F-4040-8360-E96D2AF7CFB4}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PDI_Segmentar imagens de pílulas ilícitas", "PDI_Segmentar imagens de pílulas ilícitas\PDI_Segmentar imagens de pílulas ilícitas.pyproj", "{B121C3F2-E691-4DF6-80CC-11B2928147A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +11,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{60CD6659-8B1F-4040-8360-E96D2AF7CFB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60CD6659-8B1F-4040-8360-E96D2AF7CFB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B121C3F2-E691-4DF6-80CC-11B2928147A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B121C3F2-E691-4DF6-80CC-11B2928147A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {CA403D93-8DDB-4EDC-903F-555E519E01C9}
+		SolutionGuid = {1311FB5B-E02A-4D53-9733-E1B488A37932}
 	EndGlobalSection
 EndGlobal
