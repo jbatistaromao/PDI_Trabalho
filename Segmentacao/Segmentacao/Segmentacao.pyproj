@@ -1,0 +1,162 @@
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>f044631e-f32a-45b4-aa29-a2d760a9e225</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <StartupFile>Segmentacao.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <Name>Segmentacao</Name>
+    <RootNamespace>Segmentacao</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Segmentacao.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="imagens remedio\" />
+    <Folder Include="imagens remedio\Alprazolam\" />
+    <Folder Include="imagens remedio\Domino\" />
+    <Folder Include="imagens remedio\Medium cut\" />
+    <Folder Include="imagens remedio\Tesla\" />
+    <Folder Include="imagens remedio\Warner Bros\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="imagens remedio\Alprazolam\3089_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\3283_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\3310_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\3527_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\3632_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\3665_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\3987_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\4005_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\4035_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\4047_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\4065_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\4282_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\4493_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\4550_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\4734_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\4751_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\4752_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\4887_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\5041_lg.jpg" />
+    <Content Include="imagens remedio\Alprazolam\5045_lg.jpg" />
+    <Content Include="imagens remedio\Domino\3117_lg.jpg" />
+    <Content Include="imagens remedio\Domino\3303_lg.jpg" />
+    <Content Include="imagens remedio\Domino\3642_lg.jpg" />
+    <Content Include="imagens remedio\Domino\3654_lg.jpg" />
+    <Content Include="imagens remedio\Domino\3761_lg.jpg" />
+    <Content Include="imagens remedio\Domino\3896_lg.jpg" />
+    <Content Include="imagens remedio\Domino\4424_lg.jpg" />
+    <Content Include="imagens remedio\Domino\4461_lg.jpg" />
+    <Content Include="imagens remedio\Domino\4470_lg.jpg" />
+    <Content Include="imagens remedio\Domino\4569_lg.jpg" />
+    <Content Include="imagens remedio\Domino\4570_lg.jpg" />
+    <Content Include="imagens remedio\Domino\4571_lg.jpg" />
+    <Content Include="imagens remedio\Domino\4572_lg.jpg" />
+    <Content Include="imagens remedio\Domino\4805_lg.jpg" />
+    <Content Include="imagens remedio\Domino\4840_lg.jpg" />
+    <Content Include="imagens remedio\Domino\5130_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3026_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3088_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3092_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3095_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3101_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3111_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3118_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3174_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3193_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3259_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3328_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3337_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3344_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3469_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3471_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3477_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3500_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3508_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3720_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3723_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3739_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3767_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3829_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\3989_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\4083_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\4085_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\4207_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\4442_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\4541_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\4607_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\4857_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\5014_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\5015_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\5036_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\5057_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\5195_lg.jpg" />
+    <Content Include="imagens remedio\Medium cut\5202_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\3558_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\3589_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\3656_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\3682_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\3784_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\3855_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\3973_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4004_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4171_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4329_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4430_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4487_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4506_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4557_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4598_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4606_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4619_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4721_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4759_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4772_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4773_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4885_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4904_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\4913_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\5056_lg.jpg" />
+    <Content Include="imagens remedio\Tesla\5086_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\3291_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\3299_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\3634_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\3912_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\3952_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\3981_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\4013_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\4020_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\4198_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\4219_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\4254_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\4453_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\4590_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\4748_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\4894_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\4992_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\5002_lg.jpg" />
+    <Content Include="imagens remedio\Warner Bros\5003_lg.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
+  <!-- Uncomment the CoreCompile target to enable the Build command in
+       Visual Studio and specify your pre- and post-build commands in
+       the BeforeBuild and AfterBuild targets below. -->
+  <!--<Target Name="CoreCompile" />-->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+</Project>
