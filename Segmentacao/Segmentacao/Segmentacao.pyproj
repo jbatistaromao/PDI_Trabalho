@@ -21,6 +21,21 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Codigos professor\contornos.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codigos professor\filtragemEspacial.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codigos professor\limiarizacao1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Codigos professor\limiarizacao2.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="FuncoesAuxiliares.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Regioes.py">
       <SubType>Code</SubType>
     </Compile>
@@ -33,6 +48,7 @@
     <Folder Include="imagens remedio\Medium cut\" />
     <Folder Include="imagens remedio\Tesla\" />
     <Folder Include="imagens remedio\Warner Bros\" />
+    <Folder Include="Codigos professor\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="imagens remedio\Alprazolam\3089_lg.jpg" />
