@@ -21,6 +21,9 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Regioes.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Segmentacao.py" />
   </ItemGroup>
   <ItemGroup>
