@@ -81,7 +81,7 @@ def plots(p1, p2):
     plt.show()
 
 	# Leitura Imagem
-img1 = imread('imagens remedio\\Domino\\3117_lg.jpg', as_grey=True)
+img1 = imread('imagens remedio\\Domino\\3117_lg.jpg', as_gray=True)
 img1 = (img1 * 255).round().astype(np.uint8)
 
 semente = obterSemente(img1)
