@@ -19,9 +19,22 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Segmentacao\Segmentacao\BancoDeDados\referenciasImagens.py" />
+    <Compile Include="Segmentacao\Segmentacao\Codigos professor\contornos.py" />
+    <Compile Include="Segmentacao\Segmentacao\Codigos professor\filtragemEspacial.py" />
+    <Compile Include="Segmentacao\Segmentacao\Codigos professor\limiarizacao1.py" />
+    <Compile Include="Segmentacao\Segmentacao\Codigos professor\limiarizacao2.py" />
+    <Compile Include="Segmentacao\Segmentacao\Metodos de Segmentacao\funcoesAuxiliares.py" />
+    <Compile Include="Segmentacao\Segmentacao\Metodos de Segmentacao\Regioes.py" />
     <Compile Include="Segmentacao\Segmentacao\Segmentacao.py" />
+    <Compile Include="Segmentacao\Segmentacao\SegmentacaoContorno.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".gitattributes" />
+    <Content Include=".gitignore" />
+    <Content Include=".vs\slnx.sqlite" />
+    <Content Include=".vs\VSWorkspaceState.json" />
+    <Content Include="README.md" />
     <Content Include="Segmentacao\Segmentacao\imagens remedio\Alprazolam\3089_lg.jpg" />
     <Content Include="Segmentacao\Segmentacao\imagens remedio\Alprazolam\3283_lg.jpg" />
     <Content Include="Segmentacao\Segmentacao\imagens remedio\Alprazolam\3310_lg.jpg" />
@@ -139,16 +152,25 @@
     <Content Include="Segmentacao\Segmentacao\imagens remedio\Warner Bros\4992_lg.jpg" />
     <Content Include="Segmentacao\Segmentacao\imagens remedio\Warner Bros\5002_lg.jpg" />
     <Content Include="Segmentacao\Segmentacao\imagens remedio\Warner Bros\5003_lg.jpg" />
+    <Content Include="Segmentacao\Segmentacao\Metodos de Segmentacao\funcoesAuxiliares.pyc" />
+    <Content Include="Segmentacao\Segmentacao\Segmentacao.pyc" />
+    <Content Include="Segmentacao\Segmentacao\Segmentacao.pyproj" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include=".vs\" />
+    <Folder Include=".vs\PDI_Trabalho\" />
+    <Folder Include=".vs\PDI_Trabalho\v15\" />
     <Folder Include="Segmentacao\" />
     <Folder Include="Segmentacao\Segmentacao" />
+    <Folder Include="Segmentacao\Segmentacao\BancoDeDados\" />
+    <Folder Include="Segmentacao\Segmentacao\Codigos professor\" />
     <Folder Include="Segmentacao\Segmentacao\imagens remedio\" />
     <Folder Include="Segmentacao\Segmentacao\imagens remedio\Alprazolam" />
     <Folder Include="Segmentacao\Segmentacao\imagens remedio\Domino" />
     <Folder Include="Segmentacao\Segmentacao\imagens remedio\Medium cut" />
     <Folder Include="Segmentacao\Segmentacao\imagens remedio\Tesla" />
     <Folder Include="Segmentacao\Segmentacao\imagens remedio\Warner Bros" />
+    <Folder Include="Segmentacao\Segmentacao\Metodos de Segmentacao\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
 </Project>

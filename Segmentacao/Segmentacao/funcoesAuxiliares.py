@@ -2,8 +2,9 @@ class Auxiliares:
 
     imagensDrogas = []
 
-    def _init_(self,imagemDrogas):
+    def __init__(self,imagemDrogas):
         self.imagensDrogas = imagemDrogas    
-    def imprimirArray():
-        for i in imagensDrogas:
+
+    def imprimirArray(self):
+        for i in self.imagensDrogas:
             print(i)
