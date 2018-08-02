@@ -1,16 +1,24 @@
 
+
 # Escreva o seu programa
 
 def main():
+   
     from funcoesAuxiliares import Auxiliares
-  
-    imagensDrogas = ['teste','tadeu']
+    from referenciasImagens import ReferenciasImagens
+
+    ''' Cria objeto do tipo array de referencia '''
+    imagensDroga = ReferenciasImagens()
 
 
 
 
-    funcAuxiliares = Auxiliares(imagensDrogas)
+
+    funcAuxiliares = Auxiliares(imagensDroga.alprazolam)
     funcAuxiliares.imprimirArray()
+    
+
+    
  
     print("Vixe! Ainda nao fiz este problema!")
 
