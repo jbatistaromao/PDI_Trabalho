@@ -21,6 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BancoDeDados\referenciasImagens.py" />
     <Compile Include="Codigos professor\contornos.py">
       <SubType>Code</SubType>
     </Compile>
@@ -33,15 +34,12 @@
     <Compile Include="Codigos professor\limiarizacao2.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="funcoesAuxiliares.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Regioes.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="funcoesAuxiliares.py" />
+    <Compile Include="Metodos de Segmentacao\Regioes.py" />
     <Compile Include="Segmentacao.py" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="BancoDeDados\" />
     <Folder Include="imagens remedio\" />
     <Folder Include="imagens remedio\Alprazolam\" />
     <Folder Include="imagens remedio\Domino\" />
@@ -49,6 +47,7 @@
     <Folder Include="imagens remedio\Tesla\" />
     <Folder Include="imagens remedio\Warner Bros\" />
     <Folder Include="Codigos professor\" />
+    <Folder Include="Metodos de Segmentacao\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="imagens remedio\Alprazolam\3089_lg.jpg" />

@@ -1,9 +1,10 @@
+
 # Escreva o seu programa
 
 def main():
     from funcoesAuxiliares import Auxiliares
-    from
-    imagensDrogas = []
+  
+    imagensDrogas = ['teste','tadeu']
 
 
 
