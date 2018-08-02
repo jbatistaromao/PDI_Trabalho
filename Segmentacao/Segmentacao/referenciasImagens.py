@@ -1,6 +1,6 @@
 class ReferenciasImagens():
      
-     alprazolam = ['imagens remedio\\Alprazolam\\3089_lg.jpg',
+     alprazolam = ['imagens remedio\\\\Alprazolam\\\\3089_lg.jpg',
                       'imagens remedio\\Alprazolam\\3283_lg.jpg',
                       'imagens remedio\\Alprazolam\\3310_lg.jpg',
                       'imagens remedio\\Alprazolam\\3527_lg.jpg',
