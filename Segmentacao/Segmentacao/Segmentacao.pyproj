@@ -33,7 +33,7 @@
     <Compile Include="Codigos professor\limiarizacao2.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="FuncoesAuxiliares.py">
+    <Compile Include="funcoesAuxiliares.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Regioes.py">
