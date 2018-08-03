@@ -11,6 +11,8 @@ def main():
     imagensDroga = ReferenciasImagens()
   
     testeSemente = RegioesComSemente(imagensDroga.alprazolam)
+   
+    testeSemente.segmentarImage()
 
 
 
