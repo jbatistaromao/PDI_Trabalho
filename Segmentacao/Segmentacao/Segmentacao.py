@@ -12,7 +12,7 @@ def main():
   
     testeSemente = RegioesComSemente(imagensDroga.alprazolam)
    
-    testeSemente.segmentarImage()
+    testeSemente.allImages()
 
 
 

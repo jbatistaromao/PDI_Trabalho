@@ -24,15 +24,19 @@ class RegioesComSemente():
         larguraImagem, alturaImagem = image.shape
         
       
-        p = 10. # p e uma porcentagem da altura e da largura
-    
-        pos_ini_x_mrk = int(larguraImagem/2 - p*w/100.)
-        pos_ini_y_mrk = int(alturaImagem/2 - p*h/100.)
-        pos_fim_x_mrk = int(larguraImagem/2 + p*w/100.)
-        pos_fim_y_mrk = int(alturaImagem/2 + p*h/100.)
+        #p = 10. # p e uma porcentagem da altura e da largura
+        larguraSemente = 10
+        #pos_ini_x_mrk = int(larguraImagem/2 - p*larguraImagem/100.)
+        #pos_ini_y_mrk = int(alturaImagem/2 - p*alturaImagem/100.)
+        #pos_fim_x_mrk = int(larguraImagem/2 + p*larguraImagem/100.)
+        #pos_fim_y_mrk = int(alturaImagem/2 + p*alturaImagem/100.)
+        pos_ini_x_mrk = int(larguraImagem)
+        pos_ini_y_mrk = int(larguraImagem)
+        pos_fim_x_mrk = int(larguraImagem - larguraSemente)
+        pos_fim_y_mrk = int(larguraImagem - larguraSemente)
 
         # Semente e uma imagem do mesmo tamanho que img, contendo zeros
-        semente = np.zeros(shape=(w,h), dtype=np.uint8)
+        semente = np.zeros(shape=(larguraImagem,alturaImagem), dtype=np.uint8)
         # acrescenta um retangulo central de pixels = 255
         semente[pos_ini_x_mrk:pos_fim_x_mrk, pos_ini_y_mrk:pos_fim_y_mrk] = 255
     
@@ -72,8 +76,6 @@ class RegioesComSemente():
                 if( (reg[v_x][v_y]!=255) and (abs(image[x][y]-image[v_x][v_y])<epsilon)):
                     reg[v_x][v_y] = 255
                     fila.append((v_x,v_y))
-        
-        print('entrou')
         return reg
 
       def plots(self,p1, p2):
@@ -96,11 +98,10 @@ class RegioesComSemente():
 
         plt.show()
 
-      def segmentarImage(self):
+      def segmentarImage(self, numeroImagem):
         # Leitura Imagem
-        print('to fazendo algo')
         print len(self.imagensDrogas)
-        img1 = imread(self.imagensDrogas [2], as_grey=True)
+        img1 = imread(self.imagensDrogas [numeroImagem], as_grey=True)
         img1 = (img1 * 255).round().astype(np.uint8)
 
         semente = self.obterSemente(img1)
@@ -109,12 +110,19 @@ class RegioesComSemente():
                   [1./9., 1./9., 1./9.], 
                   [1./9., 1./9., 1./9.]]
 
+
         c_media = sg.convolve(img1, media3, "valid")
 
-
-        regiao = self.crescerRegiao(c_media, semente, epsilon=10.0)
+        regiao = self.crescerRegiao(c_media, semente, epsilon=5.0)
 
         self.plots(c_media, regiao)
+     
+      def allImages(self):
+          for i in range(len(self.imagensDrogas)):
+            self.segmentarImage(i)
+
+
+
 
 
      
