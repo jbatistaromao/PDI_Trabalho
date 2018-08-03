@@ -5,11 +5,12 @@
 def main():
    
     from FuncoesAuxiliares import Auxiliares
-    from referenciasImagens import ReferenciasImagens
-    from Regioes import regiao
+    from ReferenciasImagens import ReferenciasImagens
+    from RegioesComSemente import RegioesComSemente
     ''' Cria objeto do tipo array de referencia '''
     imagensDroga = ReferenciasImagens()
-
+  
+    testeSemente = RegioesComSemente(imagensDroga.alprazolam)
 
 
 
@@ -17,7 +18,7 @@ def main():
     funcAuxiliares = Auxiliares(imagensDroga.alprazolam)
     funcAuxiliares.imprimirArray()
     
-    segmentoPorRegioes = regiao(imagensDroga.alprazolam)
+  
 
     
  
