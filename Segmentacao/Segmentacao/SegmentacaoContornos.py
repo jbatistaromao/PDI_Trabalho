@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 
 #funcao identifica se ha uma pilula circular 
-#retorna raio e o ponto central da pilula
-#caso nao haja uma pilula circular retorna 0 para ambos valores
+#retorna coordenada x e y do ponto central e o raio do circulo
+#caso nao haja uma pilula circular retorna 0 para todos os valores
 def contemPilulaCircular(imageUrl):
     #carrega e trata a imagen antes de aplicar a transformada de hough
     img = cv2.imread(imageUrl,0)
@@ -25,7 +25,7 @@ def contemPilulaCircular(imageUrl):
 
     if len(circles) > 2:
         print 'Nao Possui pilula circular'
-        return 0,0
+        return 0,0,0
     elif len(circles) == 1:
         #se a imagem possui uma pilula, o centro da pilula esta proximo ao centro da imagem
         w, h = img.shape
@@ -34,7 +34,7 @@ def contemPilulaCircular(imageUrl):
             cv2.imshow('detected circles',cimg)
             cv2.waitKey(0)
             cv2.destroyAllWindows()
-            return circles[0][0][0], circles[0][0][1]
+            return circles[0][0][0], circles[0][0][1], ircles[0][0][2]
         print 'teste' 
         print w/2
         print h/2
