@@ -12,28 +12,27 @@ class RegioesComSemente():
       
       def __init__(self, imagens):
         self.imagensDrogas = imagens
-        print('############')
-        print self.imagensDrogas[0]
-        print('###########')
+        
 
 
-      def obterSemente(self,image):
+      def obterSemente(self,image, posicaopirula):
 
         # Sabemos que a pilula esta sempre no centro da imagem
         # A semente sera um retangulo no centro
         larguraImagem, alturaImagem = image.shape
         
-      
-        #p = 10. # p e uma porcentagem da altura e da largura
-        larguraSemente = 11
-        #pos_ini_x_mrk = int(larguraImagem/2 - p*larguraImagem/100.)
-        #pos_ini_y_mrk = int(alturaImagem/2 - p*alturaImagem/100.)
-        #pos_fim_x_mrk = int(larguraImagem/2 + p*larguraImagem/100.)
-        #pos_fim_y_mrk = int(alturaImagem/2 + p*alturaImagem/100.)
-        pos_ini_x_mrk = int(1)
-        pos_ini_y_mrk = int(1)
-        pos_fim_x_mrk = int(larguraSemente)
-        pos_fim_y_mrk = int(larguraSemente)
+        if posicaopirula == 'centro':
+            p = 10. # p e uma porcentagem da altura e da largura
+            pos_ini_x_mrk = int(larguraImagem/2 - p*larguraImagem/100.)
+            pos_ini_y_mrk = int(alturaImagem/2 - p*alturaImagem/100.)
+            pos_fim_x_mrk = int(larguraImagem/2 + p*larguraImagem/100.)
+            pos_fim_y_mrk = int(alturaImagem/2 + p*alturaImagem/100.)
+        else:
+            larguraSemente = 11
+            pos_ini_x_mrk = int(1)
+            pos_ini_y_mrk = int(1)
+            pos_fim_x_mrk = int(larguraSemente)
+            pos_fim_y_mrk = int(larguraSemente)
 
         # Semente e uma imagem do mesmo tamanho que img, contendo zeros
         semente = np.zeros(shape=(larguraImagem,alturaImagem), dtype=np.uint8)
@@ -100,33 +99,46 @@ class RegioesComSemente():
 
       def segmentarImage(self, numeroImagem):
         # Leitura Imagem
-        print len(self.imagensDrogas)
+        
         img1 = imread(self.imagensDrogas [numeroImagem], as_grey=True)
         img1 = (img1 * 255).round().astype(np.uint8)
 
-        semente = self.obterSemente(img1)
+        posicaoPirula = self.verificarPosicaoDroga(img1)
+
+        semente = self.obterSemente(img1,posicaoPirula)
+
+        
 
         media = [[1./9., 1./9., 1./9.], 
                   [1./9., 1./9., 1./9.], 
                   [1./9., 1./9., 1./9.]]
 
-        media3 = [[0., -1., 0.], 
-                 [-1., 5., -1.], 
-                 [0., -1., 0.]]
+        media3 = [[1., 1., 1.], 
+                 [1., 5., 1.], 
+                 [1., 1., 1.]]
 
         passaBaixa = [[0., -1., 0.], 
                      [-1., 5., -1.], 
                      [0., -1., 0.]]
        
         
- 
-       
-        c_media = sg.convolve(img1, media, "valid")
         
-       
+        contrast   = 5
+        brightness = 3
 
+        c_media = img1*(contrast/127 + 1) - contrast + brightness
+        c_media = sg.convolve(c_media, media3, "valid")
+        
+        
+        c_media = sg.convolve(c_media, media, "valid")
+        
 
-        regiao = self.crescerRegiao(c_media, semente, epsilon=5.0)
+        
+
+        if posicaoPirula == 'centro':
+            regiao = self.crescerRegiao(c_media, semente, epsilon=55.0)
+        else:
+            regiao = self.crescerRegiao(c_media, semente, epsilon=20.0)
 
         self.plots(c_media, regiao)
      
@@ -134,28 +146,58 @@ class RegioesComSemente():
           for i in range(len(self.imagensDrogas)):
             self.segmentarImage(i)
 
-      def verificarPosicaoDroga(image):
-
-          borda = [(x-1,y), (x+1, y), (x,y-1), (x,y+1),
-                  (x-1,y+1), (x+1, y+1), (x-1,y-1), (x+1,y-1),
-                 ]
+      def verificarPosicaoDroga(self,image):
           larguraImagem, alturaImagem = image.shape
-          image
-          print(teste)
-    
-      def mediaCorSemente(borda, centro, epsilon):
 
+          borda =  [image[0][0],image[0][1],image[0][2],image[1][0],image[1][1],image[1][2],image[2][0],image[2][1],image[2][2]]
+          centro = [image[(larguraImagem/2) - 1][(alturaImagem/2) - 1],  image[(larguraImagem/2) - 1][(alturaImagem/2)],  image[(larguraImagem/2) - 1][(alturaImagem/2) + 1],
+                    image[(larguraImagem/2)][(alturaImagem/2) - 1],  image[(larguraImagem/2)][(alturaImagem/2)],  image[(larguraImagem/2)][(alturaImagem/2) + 1],
+                    image[(larguraImagem/2) + 1][(alturaImagem/2) - 1],  image[(larguraImagem/2) + 1][(alturaImagem/2)],  image[(larguraImagem/2) +1 ][(alturaImagem/2) + 1],]
+                    
+
+          posicaoPirula = self.mediaCorSemente(borda, centro,10)
+          return posicaoPirula
+
+    
+      def mediaCorSemente(self,borda, centro, epsilon):
+          posicaoPirula = ""
           mediaBorda = 0.0
           mediaCentro = 0.0
-          for i in range(9):
+
+          for i in range(8):
               mediaBorda += borda[i]
               mediaCentro += centro[i]
 
-          if ((mediaBorda + epsilon) > mediaCentro):
-             print 'centro'
-             
+          mediaBorda = mediaBorda/9
+          mediaCentro = mediaCentro/9
+
+          #print mediaCentro
+          #print mediaBorda
+
+          diferenca = abs(mediaBorda - mediaCentro)
+          
+          #Media cor escura no fundo
+          if mediaBorda < 55 and diferenca < 10:
+              if mediaBorda < 5 :
+                  print'media borda < 5'
+                  posicaoPirula = 'centro'
+              else:
+                  posicaoPirula = 'borda'
           else:
-              print 'borda'
+              if mediaCentro > 80:
+                posicaoPirula = 'centro'
+                print 'passando aqui'
+              else:
+                  if (diferenca > 10):   
+                       posicaoPirula = 'centro'
+                  else:
+                       print"entrando aqui" 
+                       posicaoPirula = 'borda'
+
+          
+          print  posicaoPirula
+          return posicaoPirula
+
 
      
         

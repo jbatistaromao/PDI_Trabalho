@@ -3,17 +3,18 @@
 # Escreva o seu programa
 
 def main():
-   
+    import numpy as np
     from FuncoesAuxiliares import Auxiliares
     from ReferenciasImagens import ReferenciasImagens
     from RegioesComSemente import RegioesComSemente
     ''' Cria objeto do tipo array de referencia '''
     imagensDroga = ReferenciasImagens()
   
-    testeSemente = RegioesComSemente(imagensDroga.alprazolam)
+    testeSemente = RegioesComSemente(imagensDroga.warnerBros)
+    
    
     testeSemente.allImages()
-
+    #testeSemente.segmentarImage(0)
 
 
 
