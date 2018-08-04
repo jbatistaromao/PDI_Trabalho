@@ -30,10 +30,10 @@ class RegioesComSemente():
         #pos_ini_y_mrk = int(alturaImagem/2 - p*alturaImagem/100.)
         #pos_fim_x_mrk = int(larguraImagem/2 + p*larguraImagem/100.)
         #pos_fim_y_mrk = int(alturaImagem/2 + p*alturaImagem/100.)
-        pos_ini_x_mrk = int(larguraImagem)
-        pos_ini_y_mrk = int(larguraImagem)
-        pos_fim_x_mrk = int(larguraImagem - larguraSemente)
-        pos_fim_y_mrk = int(larguraImagem - larguraSemente)
+        pos_ini_x_mrk = int(0)
+        pos_ini_y_mrk = int(0)
+        pos_fim_x_mrk = int(larguraSemente)
+        pos_fim_y_mrk = int(larguraSemente)
 
         # Semente e uma imagem do mesmo tamanho que img, contendo zeros
         semente = np.zeros(shape=(larguraImagem,alturaImagem), dtype=np.uint8)
@@ -55,7 +55,7 @@ class RegioesComSemente():
             
         return lista
 
-      def crescerRegiao(self,image, reg, epsilon=5):
+      def crescerRegiao(self,image, reg, epsilon=4):
         w, h = image.shape
     
         fila = deque()
