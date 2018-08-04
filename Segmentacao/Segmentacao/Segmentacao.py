@@ -17,8 +17,8 @@ def main():
 
 
 
-    funcAuxiliares = Auxiliares(imagensDroga.alprazolam)
-    funcAuxiliares.imprimirArray()
+    #funcAuxiliares = Auxiliares(imagensDroga.alprazolam)
+    #funcAuxiliares.imprimirArray()
     
   
 

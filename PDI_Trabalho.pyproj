@@ -24,8 +24,12 @@
     <Compile Include="Segmentacao\Segmentacao\Codigos professor\filtragemEspacial.py" />
     <Compile Include="Segmentacao\Segmentacao\Codigos professor\limiarizacao1.py" />
     <Compile Include="Segmentacao\Segmentacao\Codigos professor\limiarizacao2.py" />
+    <Compile Include="Segmentacao\Segmentacao\funcoesAuxiliares.py" />
     <Compile Include="Segmentacao\Segmentacao\Metodos de Segmentacao\funcoesAuxiliares.py" />
     <Compile Include="Segmentacao\Segmentacao\Metodos de Segmentacao\Regioes.py" />
+    <Compile Include="Segmentacao\Segmentacao\referenciasImagens.py" />
+    <Compile Include="Segmentacao\Segmentacao\Regioes.py" />
+    <Compile Include="Segmentacao\Segmentacao\RegioesComSemente.py" />
     <Compile Include="Segmentacao\Segmentacao\Segmentacao.py" />
     <Compile Include="Segmentacao\Segmentacao\SegmentacaoContorno.py" />
   </ItemGroup>

@@ -25,13 +25,13 @@ class RegioesComSemente():
         
       
         #p = 10. # p e uma porcentagem da altura e da largura
-        larguraSemente = 10
+        larguraSemente = 11
         #pos_ini_x_mrk = int(larguraImagem/2 - p*larguraImagem/100.)
         #pos_ini_y_mrk = int(alturaImagem/2 - p*alturaImagem/100.)
         #pos_fim_x_mrk = int(larguraImagem/2 + p*larguraImagem/100.)
         #pos_fim_y_mrk = int(alturaImagem/2 + p*alturaImagem/100.)
-        pos_ini_x_mrk = int(0)
-        pos_ini_y_mrk = int(0)
+        pos_ini_x_mrk = int(1)
+        pos_ini_y_mrk = int(1)
         pos_fim_x_mrk = int(larguraSemente)
         pos_fim_y_mrk = int(larguraSemente)
 
@@ -106,12 +106,25 @@ class RegioesComSemente():
 
         semente = self.obterSemente(img1)
 
-        media3 = [[1./9., 1./9., 1./9.], 
+        media = [[1./9., 1./9., 1./9.], 
                   [1./9., 1./9., 1./9.], 
                   [1./9., 1./9., 1./9.]]
 
+        media3 = [[0., -1., 0.], 
+                 [-1., 5., -1.], 
+                 [0., -1., 0.]]
 
-        c_media = sg.convolve(img1, media3, "valid")
+        passaBaixa = [[0., -1., 0.], 
+                     [-1., 5., -1.], 
+                     [0., -1., 0.]]
+       
+        
+ 
+       
+        c_media = sg.convolve(img1, media, "valid")
+        
+       
+
 
         regiao = self.crescerRegiao(c_media, semente, epsilon=5.0)
 
@@ -121,9 +134,28 @@ class RegioesComSemente():
           for i in range(len(self.imagensDrogas)):
             self.segmentarImage(i)
 
+      def verificarPosicaoDroga(image):
 
+          borda = [(x-1,y), (x+1, y), (x,y-1), (x,y+1),
+                  (x-1,y+1), (x+1, y+1), (x-1,y-1), (x+1,y-1),
+                 ]
+          larguraImagem, alturaImagem = image.shape
+          image
+          print(teste)
+    
+      def mediaCorSemente(borda, centro, epsilon):
 
+          mediaBorda = 0.0
+          mediaCentro = 0.0
+          for i in range(9):
+              mediaBorda += borda[i]
+              mediaCentro += centro[i]
 
+          if ((mediaBorda + epsilon) > mediaCentro):
+             print 'centro'
+             
+          else:
+              print 'borda'
 
      
-
+        
