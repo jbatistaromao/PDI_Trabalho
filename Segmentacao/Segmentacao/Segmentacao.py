@@ -9,17 +9,26 @@ def main():
     from RegioesComSemente import RegioesComSemente
     ''' Cria objeto do tipo array de referencia '''
     imagensDroga = ReferenciasImagens()
-  
-    testeSemente = RegioesComSemente(imagensDroga.warnerBros)
-    
+    print'########### ALPRAZOLAM ###########'
+    testeSemente1 = RegioesComSemente(imagensDroga.alprazolam)
+    testeSemente1.allImages()
+
+    print'########### DOMINO ###########'
+    testeSemente1 = RegioesComSemente(imagensDroga.domino)
+    testeSemente1.allImages()
+
+    print'########### MEDIUM CUT ###########'
+    testeSemente1 = RegioesComSemente(imagensDroga.mediumCut)
+    testeSemente1.allImages()
+
+    print'########### TESLA ###########'
+    testeSemente1 = RegioesComSemente(imagensDroga.tesla)
+    testeSemente1.allImages()
    
-    testeSemente.allImages()
-    #testeSemente.segmentarImage(0)
-
-
-
-    #funcAuxiliares = Auxiliares(imagensDroga.alprazolam)
-    #funcAuxiliares.imprimirArray()
+    
+    print'########### WARNER BROS ###########'
+    testeSemente1 = RegioesComSemente(imagensDroga.warnerBros)
+    testeSemente1.allImages()
     
   
 

@@ -103,7 +103,7 @@ class RegioesComSemente():
         img1 = imread(self.imagensDrogas [numeroImagem], as_grey=True)
         img1 = (img1 * 255).round().astype(np.uint8)
 
-        posicaoPirula = self.verificarPosicaoDroga(img1)
+        posicaoPirula= self.verificarPosicaoDroga(img1)
 
         semente = self.obterSemente(img1,posicaoPirula)
 
@@ -113,37 +113,35 @@ class RegioesComSemente():
                   [1./9., 1./9., 1./9.], 
                   [1./9., 1./9., 1./9.]]
 
-        media3 = [[1., 1., 1.], 
-                 [1., 5., 1.], 
-                 [1., 1., 1.]]
+        gausianoMultiplySix = [[1., 1., 1.], 
+                               [1., 2., 1.], 
+                               [1., 1., 1.]]
 
         passaBaixa = [[0., -1., 0.], 
-                     [-1., 5., -1.], 
-                     [0., -1., 0.]]
+                      [-1., 5., -1.], 
+                      [0., -1., 0.]]
        
         
         
-        contrast   = 5
+        contrast   = 4
         brightness = 3
 
-        c_media = img1*(contrast/127 + 1) - contrast + brightness
-        c_media = sg.convolve(c_media, media3, "valid")
-        
-        
+        #c_media = img1*(contrast/127 + 1) - contrast + brightness
+      
+        c_media = sg.convolve(img1, gausianoMultiplySix, "valid")
         c_media = sg.convolve(c_media, media, "valid")
-        
-
-        
-
+       
         if posicaoPirula == 'centro':
-            regiao = self.crescerRegiao(c_media, semente, epsilon=55.0)
+                regiao = self.crescerRegiao(c_media, semente, epsilon=55.0)
         else:
-            regiao = self.crescerRegiao(c_media, semente, epsilon=20.0)
+                regiao = self.crescerRegiao(c_media, semente, epsilon=20.0)
 
         self.plots(c_media, regiao)
      
       def allImages(self):
+          
           for i in range(len(self.imagensDrogas)):
+         
             self.segmentarImage(i)
 
       def verificarPosicaoDroga(self,image):
@@ -160,6 +158,7 @@ class RegioesComSemente():
 
     
       def mediaCorSemente(self,borda, centro, epsilon):
+          tipoFiltro = 'normal'
           posicaoPirula = ""
           mediaBorda = 0.0
           mediaCentro = 0.0
@@ -171,31 +170,25 @@ class RegioesComSemente():
           mediaBorda = mediaBorda/9
           mediaCentro = mediaCentro/9
 
-          #print mediaCentro
-          #print mediaBorda
+         
 
           diferenca = abs(mediaBorda - mediaCentro)
-          
-          #Media cor escura no fundo
-          if mediaBorda < 55 and diferenca < 10:
-              if mediaBorda < 5 :
-                  print'media borda < 5'
-                  posicaoPirula = 'centro'
-              else:
-                  posicaoPirula = 'borda'
-          else:
-              if mediaCentro > 80:
-                posicaoPirula = 'centro'
-                print 'passando aqui'
-              else:
-                  if (diferenca > 10):   
-                       posicaoPirula = 'centro'
-                  else:
-                       print"entrando aqui" 
-                       posicaoPirula = 'borda'
 
-          
-          print  posicaoPirula
+          if mediaBorda < 50:
+              posicaoPirula = 'borda'
+              print 1
+          elif diferenca > 75.0:
+              posicaoPirula = 'centro'
+             
+              print 2
+          elif mediaCentro > 190:      
+              posicaoPirula = 'borda' 
+           
+              print 3
+          else:
+              posicaoPirula = 'borda'   
+              print 4
+         
           return posicaoPirula
 
 
