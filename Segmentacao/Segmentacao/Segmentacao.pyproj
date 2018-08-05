@@ -36,6 +36,9 @@
     <Compile Include="FuncoesAuxiliares.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="kMedias.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="SegmentacaoContornos.py">
       <SubType>Code</SubType>
     </Compile>
