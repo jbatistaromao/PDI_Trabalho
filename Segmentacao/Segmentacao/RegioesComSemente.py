@@ -9,7 +9,7 @@ from scipy import signal as sg
 
 class RegioesComSemente():
       imagensDrogas = []
-      
+      area
       def __init__(self, imagens):
         self.imagensDrogas = imagens
         
@@ -78,6 +78,8 @@ class RegioesComSemente():
         return reg
 
       def plots(self,p1, p2):
+        
+        
         fig = plt.figure(figsize=(9,3), dpi=80)
         a = fig.add_subplot(1,3,1)
         a.axis('off')
@@ -117,9 +119,9 @@ class RegioesComSemente():
                                [1., 2., 1.], 
                                [1., 1., 1.]]
 
-        passaBaixa = [[0., -1., 0.], 
-                      [-1., 5., -1.], 
-                      [0., -1., 0.]]
+        passaBaixa = [[0., 1., 0.], 
+                      [1., 1., 1.], 
+                      [0., 1., 0.]]
        
         
         
@@ -129,12 +131,14 @@ class RegioesComSemente():
         #c_media = img1*(contrast/127 + 1) - contrast + brightness
       
         c_media = sg.convolve(img1, gausianoMultiplySix, "valid")
+     
         c_media = sg.convolve(c_media, media, "valid")
+        
        
         if posicaoPirula == 'centro':
                 regiao = self.crescerRegiao(c_media, semente, epsilon=55.0)
         else:
-                regiao = self.crescerRegiao(c_media, semente, epsilon=20.0)
+                regiao = self.crescerRegiao(c_media, semente, epsilon=22.5)
 
         self.plots(c_media, regiao)
      
@@ -171,25 +175,34 @@ class RegioesComSemente():
           mediaCentro = mediaCentro/9
 
          
-
+          print mediaCentro
           diferenca = abs(mediaBorda - mediaCentro)
 
-          if mediaBorda < 50:
-              posicaoPirula = 'borda'
-              print 1
-          elif diferenca > 75.0:
-              posicaoPirula = 'centro'
-             
-              print 2
+          if mediaBorda < 5:
+            posicaoPirula = 'centro'
+            print 1
+          elif mediaBorda < 50:
+            posicaoPirula = 'borda'
+            print 2
+          elif mediaCentro < mediaBorda:
+            posicaoPirula = 'borda'
+            print 3
+          elif mediaCentro > mediaBorda:
+            posicaoPirula = 'centro'
+            print 5
+          elif diferenca > 85.0:
+            posicaoPirula = 'borda'
+            print 5
           elif mediaCentro > 190:      
-              posicaoPirula = 'borda' 
-           
-              print 3
+            posicaoPirula = 'borda' 
+            print 6
           else:
-              posicaoPirula = 'borda'   
-              print 4
+            posicaoPirula = 'borda'   
+            print 7
          
           return posicaoPirula
+      def calcularAreaDroga(img):
+          print'Area'
 
 
      
