@@ -1,11 +1,10 @@
-import numpy as np
-#from FuncoesAuxiliares import Auxiliares
-from referenciasImagens import ReferenciasImagens
-from RegioesComSemente import RegioesComSemente
-from SegmentacaoContornos import contemPilulaCircular
-from kMedias import KMedias
+
 def main():
-   
+    import numpy as np
+    #from FuncoesAuxiliares import Auxiliares
+    from referenciasImagens import ReferenciasImagens
+    from RegioesComSemente import RegioesComSemente
+    from SegmentacaoContornos import contemPilulaCircular
     ''' Cria objeto do tipo array de referencia '''
     imagensDroga = ReferenciasImagens()
     
@@ -52,7 +51,7 @@ def main():
     testeSemente1.allImages()
     '''
     
-    #segmentar por kmedias
+    
     imagensDroga = ReferenciasImagens()
 
     testeKmedias = KMedias(imagensDroga.alprazolam)
