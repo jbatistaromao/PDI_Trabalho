@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f044631e-f32a-45b4-aa29-a2d760a9e225</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>SegmentacaoContornos.py</StartupFile>
+    <StartupFile>KMeanspy.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -36,9 +36,13 @@
     <Compile Include="FuncoesAuxiliares.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="KMeanspy.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="kMedias.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="referenciasImagens.py" />
     <Compile Include="RegioesComSemente.py">
       <SubType>Code</SubType>
     </Compile>

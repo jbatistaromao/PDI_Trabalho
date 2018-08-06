@@ -9,7 +9,7 @@
 def main():
     import numpy as np
     from FuncoesAuxiliares import Auxiliares
-    from ReferenciasImagens import ReferenciasImagens
+    from referenciasImagens import ReferenciasImagens
     from RegioesComSemente import RegioesComSemente
     ''' Cria objeto do tipo array de referencia '''
     imagensDroga = ReferenciasImagens()
