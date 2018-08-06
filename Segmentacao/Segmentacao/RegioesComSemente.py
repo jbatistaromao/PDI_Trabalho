@@ -109,8 +109,6 @@ class RegioesComSemente():
 
         semente = self.obterSemente(img1,posicaoPirula)
 
-        
-
         media = [[1./9., 1./9., 1./9.], 
                   [1./9., 1./9., 1./9.], 
                   [1./9., 1./9., 1./9.]]
@@ -123,12 +121,6 @@ class RegioesComSemente():
                       [1., 1., 1.], 
                       [0., 1., 0.]]
        
-        
-        
-        contrast   = 4
-        brightness = 3
-
-        #c_media = img1*(contrast/127 + 1) - contrast + brightness
       
         c_media = sg.convolve(img1, gausianoMultiplySix, "valid")
      
