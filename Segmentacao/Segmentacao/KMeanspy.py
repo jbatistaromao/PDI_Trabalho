@@ -5,9 +5,9 @@ import numpy as np
 def main():
     
    
-    imgpath =  'imagens remedio\\Alprazolam\\3089_lg.jpg'
+    imgpath =   'imagens remedio\\\\Alprazolam\\\\3665_lg.jpg'
 
-    img = cv2.imread(imgpath, as_grey=True)
+    img = cv2.imread(imgpath, 1)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     
     Z = img.reshape((-1,3))
