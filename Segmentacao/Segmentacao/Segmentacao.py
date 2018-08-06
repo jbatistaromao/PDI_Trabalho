@@ -2,21 +2,39 @@
 
 # Escreva o seu programa
 
-def main():
-   
-    from funcoesAuxiliares import Auxiliares
-    from referenciasImagens import ReferenciasImagens
 
+
+# Escreva o seu programa
+
+def main():
+    import numpy as np
+    from FuncoesAuxiliares import Auxiliares
+    from ReferenciasImagens import ReferenciasImagens
+    from RegioesComSemente import RegioesComSemente
     ''' Cria objeto do tipo array de referencia '''
     imagensDroga = ReferenciasImagens()
+    ''' print'########### ALPRAZOLAM ###########'
+    testeSemente1 = RegioesComSemente(imagensDroga.alprazolam)
+    testeSemente1.allImages()
 
-
-
-
-
-    funcAuxiliares = Auxiliares(imagensDroga.alprazolam)
-    funcAuxiliares.imprimirArray()
+    print'########### DOMINO ###########'
+    testeSemente1 = RegioesComSemente(imagensDroga.domino)
+    testeSemente1.allImages()
+    '''
+    print'########### MEDIUM CUT ###########'
+    testeSemente1 = RegioesComSemente(imagensDroga.mediumCut)
+    testeSemente1.allImages()
+    '''
+    print'########### TESLA ###########'
+    testeSemente1 = RegioesComSemente(imagensDroga.tesla)
+    testeSemente1.allImages()
+   
     
+    print'########### WARNER BROS ###########'
+    testeSemente1 = RegioesComSemente(imagensDroga.warnerBros)
+    testeSemente1.allImages()
+    '''
+  
 
     
  
