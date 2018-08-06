@@ -20,15 +20,19 @@ def main():
     for i in range(qtdImagens):
         if i < len(imagensDroga.alprazolam):
             print ''
-            _,_,raio = contemPilulaCircular(imagensDroga.alprazolam[i])
+            _,_,raio = contemPilulaCircular(imagensDroga.domino[i])
             if raio != 0:
                 print 'Area atual: ' + str(3.14*raio*raio)
                 print 'Perimetro atual: ' + str(3.14*2*raio)
                 areaMedia = areaMedia + 3.14*raio*raio
                 perimetroMedio = perimetroMedio + 2*3.14*raio
             else:
-                testeSemente1.calcularAreaDroga(i)
-
+               
+                testeSemente1 = RegioesComSemente(imagensDroga.alprazolam)
+                areaAtual = testeSemente1.calcularAreaDroga(i)
+                areaMedia = areaMedia + areaAtual
+                print 'area: ' + str(areaAtual)
+                #testeSemente1.allImages()
     ''' print'########### ALPRAZOLAM ###########'
     testeSemente1 = RegioesComSemente(imagensDroga.alprazolam)
     testeSemente1.allImages()

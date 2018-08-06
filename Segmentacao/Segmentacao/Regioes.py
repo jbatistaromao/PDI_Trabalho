@@ -57,7 +57,7 @@ def crescerRegiao(image, reg, epsilon=5):
                 reg[v_x][v_y] = 255
                 fila.append((v_x,v_y))
         
-    print('entrou')
+    
     return reg
                 
 def plots(p1, p2):

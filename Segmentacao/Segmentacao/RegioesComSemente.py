@@ -10,6 +10,7 @@ from SegmentacaoContornos import contemPilulaCircular
 
 class RegioesComSemente():
       imagensDrogas = []
+      retornoRegiao = 0
       
       def __init__(self, imagens):
         self.imagensDrogas = imagens
@@ -75,6 +76,7 @@ class RegioesComSemente():
                 if( (reg[v_x][v_y]!=255) and (abs(image[x][y]-image[v_x][v_y])<epsilon)):
                     reg[v_x][v_y] = 255
                     fila.append((v_x,v_y))
+       
         return reg
 
       def plots(self,p1, p2):
@@ -99,10 +101,11 @@ class RegioesComSemente():
 
         plt.show()
 
+
       def segmentarImage(self, numeroImagem):
         # Leitura Imagem
         
-        img1 = imread(self.imagensDrogas [numeroImagem], as_grey=True)
+        img1 = imread(self.imagensDrogas [numeroImagem], as_gray=True)
         img1 = (img1 * 255).round().astype(np.uint8)
 
         posicaoPirula= self.verificarPosicaoDroga(img1)
@@ -129,9 +132,14 @@ class RegioesComSemente():
        
         if posicaoPirula == 'centro':
                 regiao = self.crescerRegiao(c_media, semente, epsilon=55.0)
+                #return regiao
+                self.retornoRegiao = regiao
+               
         else:
                 regiao = self.crescerRegiao(c_media, semente, epsilon=22.5)
-
+                #return regiao
+                self.retornoRegiao = regiao
+               
         self.plots(c_media, regiao)
      
       def allImages(self):
@@ -150,6 +158,7 @@ class RegioesComSemente():
                     
 
           posicaoPirula = self.mediaCorSemente(borda, centro,10)
+          print 'Posicao: ' + str(posicaoPirula)
           return posicaoPirula
 
     
@@ -167,41 +176,63 @@ class RegioesComSemente():
           mediaCentro = mediaCentro/9
 
          
-          print mediaCentro
+          
           diferenca = abs(mediaBorda - mediaCentro)
 
           if mediaBorda < 5:
             posicaoPirula = 'centro'
-            print 1
+            
           elif mediaBorda < 50:
             posicaoPirula = 'borda'
-            print 2
+           
           elif mediaCentro < mediaBorda:
             posicaoPirula = 'borda'
-            print 3
+           
           elif mediaCentro > mediaBorda:
             posicaoPirula = 'centro'
-            print 5
+            
           elif diferenca > 85.0:
             posicaoPirula = 'borda'
-            print 5
+            
           elif mediaCentro > 190:      
             posicaoPirula = 'borda' 
-            print 6
+            
           else:
             posicaoPirula = 'borda'   
-            print 7
+           
          
           return posicaoPirula
 
 
-      def calcularAreaDroga(img):
-          if(verificarPosicaoDroga(img) == 'centro'):
-              regiao = self.crescerRegiao(c_media, semente, epsilon=55.0)
-              print 'regiao: ' + str(regiao)
+      def calcularAreaDroga(self, numImage):
+          self.segmentarImage(numImage)
+          regiao = self.retornoRegiao
+          
+          w,h = regiao.shape
+          largura = 0
+          altura = 0
+          qtdZeros = 0
 
+          i = 0
+          j = 0
+        
 
-     
+          for i in range(w):
+              for j in range(h):
+                  if regiao[i][j] == 0:
+                      qtdZeros = qtdZeros + 1
+          
+          
+          img1 = imread(self.imagensDrogas [numImage], as_gray=True)
+          img1 = (img1 * 255).round().astype(np.uint8)
+
+          posicaoPirula= self.verificarPosicaoDroga(img1)
+          if posicaoPirula == 'centro':
+              return qtdZeros
+          else:
+
+              return 40000 - qtdZeros
+       
         
 
 
