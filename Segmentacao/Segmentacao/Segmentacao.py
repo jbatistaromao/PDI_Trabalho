@@ -1,18 +1,34 @@
 
-
-# Escreva o seu programa
-
-
-
-# Escreva o seu programa
-
 def main():
     import numpy as np
-    from FuncoesAuxiliares import Auxiliares
+    #from FuncoesAuxiliares import Auxiliares
     from referenciasImagens import ReferenciasImagens
     from RegioesComSemente import RegioesComSemente
+    from SegmentacaoContornos import contemPilulaCircular
     ''' Cria objeto do tipo array de referencia '''
     imagensDroga = ReferenciasImagens()
+    
+    #Caracteristicas dos objetos
+    circularidade = 0
+    areaMedia = 0
+    areaAtual = 0
+    perimetroMedio = 0
+    perimetroAtual = 0
+
+    qtdImagens = len(imagensDroga.alprazolam) + len(imagensDroga.domino) +\
+                            len(imagensDroga.mediumCut) + len(imagensDroga.tesla) + len(imagensDroga.warnerBros)
+    for i in range(qtdImagens):
+        if i < len(imagensDroga.alprazolam):
+            print ''
+            _,_,raio = contemPilulaCircular(imagensDroga.alprazolam[i])
+            if raio != 0:
+                print 'Area atual: ' + str(3.14*raio*raio)
+                print 'Perimetro atual: ' + str(3.14*2*raio)
+                areaMedia = areaMedia + 3.14*raio*raio
+                perimetroMedio = perimetroMedio + 2*3.14*raio
+            else:
+                testeSemente1.calcularAreaDroga(i)
+
     ''' print'########### ALPRAZOLAM ###########'
     testeSemente1 = RegioesComSemente(imagensDroga.alprazolam)
     testeSemente1.allImages()

@@ -5,11 +5,12 @@ from skimage.io import imread
 from scipy import ndimage
 from collections import deque
 from scipy import signal as sg
+from SegmentacaoContornos import contemPilulaCircular
 
 
 class RegioesComSemente():
       imagensDrogas = []
-      area
+      
       def __init__(self, imagens):
         self.imagensDrogas = imagens
         
@@ -17,8 +18,7 @@ class RegioesComSemente():
 
       def obterSemente(self,image, posicaopirula):
 
-        # Sabemos que a pilula esta sempre no centro da imagem
-        # A semente sera um retangulo no centro
+
         larguraImagem, alturaImagem = image.shape
         
         if posicaopirula == 'centro':
@@ -119,16 +119,8 @@ class RegioesComSemente():
                                [1., 2., 1.], 
                                [1., 1., 1.]]
 
-        passaBaixa = [[0., 1., 0.], 
-                      [1., 1., 1.], 
-                      [0., 1., 0.]]
-       
-        
-        
-        contrast   = 4
-        brightness = 3
 
-        #c_media = img1*(contrast/127 + 1) - contrast + brightness
+
       
         c_media = sg.convolve(img1, gausianoMultiplySix, "valid")
      
@@ -201,8 +193,12 @@ class RegioesComSemente():
             print 7
          
           return posicaoPirula
+
+
       def calcularAreaDroga(img):
-          print'Area'
+          if(verificarPosicaoDroga(img) == 'centro'):
+              regiao = self.crescerRegiao(c_media, semente, epsilon=55.0)
+              print 'regiao: ' + str(regiao)
 
 
      

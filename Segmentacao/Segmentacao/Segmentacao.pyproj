@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>f044631e-f32a-45b4-aa29-a2d760a9e225</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>KMeanspy.py</StartupFile>
+    <StartupFile>Segmentacao.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

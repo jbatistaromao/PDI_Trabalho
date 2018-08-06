@@ -82,7 +82,7 @@ def contemPilulaCircular(imageUrl):
             cv2.imshow('detected circles',cimg)
             cv2.waitKey(0)
             cv2.destroyAllWindows()
-            return circles[0][0][0], circles[0][0][1], ircles[0][0][2]
+            return circles[0][0][0], circles[0][0][1], circles[0][0][2]
 
 
         else:
@@ -127,5 +127,5 @@ def contemPilulaCircular(imageUrl):
         cv2.destroyAllWindows()
            
         return 0,0,0
-contemPilulaCircular('imagens remedio\\Medium cut\\5014_lg.jpg')
+
 
